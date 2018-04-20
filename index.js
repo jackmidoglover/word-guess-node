@@ -1,6 +1,7 @@
 const Word = require("./word");
 const inquirer = require("inquirer");
 
+// overall game function, allows game to be run recursively
 function reset(){
 const movies = ["annihilation", "blade runner", "the fifth element", "moon", "event horizon", "solaris", "mars attacks"];
 const computerChoice = movies[Math.floor(Math.random() * movies.length)];
