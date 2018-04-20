@@ -6,6 +6,9 @@ class Word {
         this.letters = [];
         for (let i = 0; i < this.word.length; i++) {
             let character = new Letter (this.word[i]);
+            if (character == ' ') {
+                character.guessed = true;
+            }
             this.letters.push(character);
             this.letters[i].toString();
         }

@@ -11,7 +11,7 @@ class Letter {
             }
             else {
             return this.placeholder;
-        }
+            }
         }
         else {
             return this.letter; 
