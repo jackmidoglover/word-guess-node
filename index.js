@@ -21,7 +21,27 @@ inquirer.prompt([
     {
         type: "input",
         name: "letter",
-        message: "Guess a letter: "
+        message: "Guess a letter: ",
+        validate: (value) => {
+            // if (value.length < 2 ){
+            //     return true;
+            // }
+            // else {
+            //     console.log("You can only enter one letter!");
+            // }
+            
+            if ((value.charCodeAt(0) >= 48 && value.charCodeAt(0) <=57) || (value.charCodeAt(0) >= 65 && value.charCodeAt(0) <= 90 ) || (value.charCodeAt(0) >= 97 && value.charCodeAt(0) <= 122)){
+                if(value.length < 2 && value.length > 0) {
+                return true;
+                }
+                else {
+                    console.log("\n You may only enter one character at a time.");
+                }
+            }
+            else {
+                console.log("\n Sorry, your input must be a letter or number!");
+            }
+        }
     }
 ]).then(function(a){
     if (computerChoice.includes(a.letter)){
